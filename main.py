@@ -48,7 +48,7 @@ def main():
 
         while not finish:
             last_game = session.get('https://0xterminal.game/api/game/last').json()
-            if last_game.get('error') == 'Not Found' or last_game['status'] == 'WIN' or last_game['status'] == 'LOSE':
+            if last_game.get('error') == 'Not Found' or last_game['status'] == 'WIN' or last_game['status'] == 'LOSS':
                 print('Game finished, start new')
                 game = session.post('https://0xterminal.game/api/game/create').json()
             else:
